@@ -89,7 +89,9 @@ async def chat(request: ChatRequest, background_tasks: BackgroundTasks):
                     yield f"{output['mongodb_output']}||?||"
                 if "graph_ploting" in output:
                     yield f"[CODE]{output['graph_ploting']}||?||"
-                if "final_output" in output:
+                if "final_output" in output and output['final_output'].get('messages'): ## เอาไว้รีข้อความให้ลงท้ายด้วยคำตอบ AI
+                    yield f"{output['final_output']['messages'][-1].content}||?||"
+                if output.get('final_output', {}).get('html_fig', False):
                     yield f"[DONE]{pio.to_json(output['final_output'].get('html_fig', None), validate=False, remove_uids=True)}||?||"
 
         except Exception as e:

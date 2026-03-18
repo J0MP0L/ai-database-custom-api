@@ -198,3 +198,15 @@ button {
   font-size: 14px;
   color: #00f2fe;
 }
+
+.message-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.message-content pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

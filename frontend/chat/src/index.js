@@ -9,7 +9,7 @@ import { loadingCode } from "./other.js";
 const CONFIG = {
   threadId: "6",
   ownerId: "e1e6b21c463b4a1f9b5ac4c0255f9e27",
-  apiEndpoint: "http://localhost:8000/api/chat",
+  apiEndpoint: "/api/chat",
 };
 
 async function callApi(message) {
